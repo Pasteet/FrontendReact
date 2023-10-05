@@ -25,12 +25,8 @@ body {
   padding: 8px;
 }
 
-#shipmentsData tr:nth-child(even) {
-  background-color: #f4f7f8;
-}
-
 #shipmentsData tr:hover {
-  background-color: #fcffc7;
+  background-color: #c7f4ff;
 }
 
 #shipmentsData th {
@@ -62,8 +58,13 @@ body {
   direction: rtl;
 }
 
-#viewBtn {
-  background-color: rgb(204, 204, 254);
-  width: 80px;
-  height: auto;
+.viewBtn {
+  background-color: rgb(244, 244, 255);
+  width: auto;
+  height: 40px;
+}
+
+.viewBtn:hover {
+  background-color: #c3c3c3;
+  cursor: pointer;
 }

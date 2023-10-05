@@ -39,12 +39,12 @@ import ShipmentDetailsPanel from "../components/ShipmentDetailsPanel";
 //     console.log("rejected", err);
 //   });
 
-// ShipmentContext.js
-
 const ShipmentContext = () => {
   const [ships, setShips] = useState([]);
   const [selectedShipment, setSelectedShipment] = useState(null);
   const [editedShips, setEditedShips] = useState([]);
+
+  //https://my.api.mockaroo.com/shipments.json?key=5e0b62d0
 
   useEffect(() => {
     fetch("Shipments.json")
@@ -121,16 +121,18 @@ const ShipmentContext = () => {
               <tr {...row.getRowProps()}>
                 {row.cells.map((cell) => (
                   <React.Fragment key={cell.getCellProps().key}>
-                    <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
-                    {cell.column.id === "actions" && (
-                      <td>
+                    <td {...cell.getCellProps()}>
+                      {cell.render("Cell")}
+                      {cell.column.id === "actions" ? ( // Check if the column is "actions"
                         <button
-                          id="viewBtn"
+                          className="viewBtn"
                           onClick={() => openDetailsPanel(row.original)}>
                           Details
                         </button>
-                      </td>
-                    )}
+                      ) : (
+                        cell.render("Cell") // Render the cell content
+                      )}
+                    </td>
                   </React.Fragment>
                 ))}
               </tr>
