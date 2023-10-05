@@ -1,6 +1,6 @@
 import React from "react";
 
-const ShipmentDetailsPanel = ({shipment}) => {
+const ShipmentDetailsPanel = ({shipment, updateShipmentData}) => {
   return (
     <div className="shipment-details-panel">
       <h3>Shipment Details</h3>

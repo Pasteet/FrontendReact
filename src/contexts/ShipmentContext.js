@@ -122,15 +122,14 @@ const ShipmentContext = () => {
                 {row.cells.map((cell) => (
                   <React.Fragment key={cell.getCellProps().key}>
                     <td {...cell.getCellProps()}>
-                      {cell.render("Cell")}
-                      {cell.column.id === "actions" ? ( // Check if the column is "actions"
+                      {cell.column.id === "actions" ? (
                         <button
                           className="viewBtn"
                           onClick={() => openDetailsPanel(row.original)}>
                           Details
                         </button>
                       ) : (
-                        cell.render("Cell") // Render the cell content
+                        cell.render("Cell")
                       )}
                     </td>
                   </React.Fragment>
